@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#FFF8F6">
+<script>try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elizabeth Saku | Data Analyst in the Making</title>
+<meta name="description" content="Portfolio of Elizabeth Saku, engineering and management student building a career in data and AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Search this file for "EDIT" to find everything you need to replace. -->
+<style>
+:root{
+  color-scheme:light;
+  --bg:#FFF8F6;--card:#FFFFFF;--ink:#5B2A44;--muted:#8A5A72;--body:#7A4A63;--line:#F3DCE5;--dash:#EFC9D8;
+  --rose:#B83A68;--pink:#F9C6D8;--on-pink:#5B2A44;--lav:#EADFFB;--mint:#D5F2E3;--name:#D6538A;--hl:#FBD3E2;
+  --stat1:#FDE3EC;--icbg:#FDE9F0;--tagtxt:#5B3E8A;
+  --pill1:#FFF1F5;--pill2:#F5EFFE;--pill3:#EAF8F1;--pill4:#FFF4EA;
+  --glow1:rgba(249,198,216,.55);--glow2:rgba(234,223,251,.7);--glow3:rgba(213,242,227,.6);
+  --grid:rgba(224,113,155,.10);--shadow:0 10px 30px rgba(224,113,155,.12);--bar:rgba(255,255,255,.8);
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181019;--card:#241A2C;--ink:#FBE3EE;--muted:#CBA3B8;--body:#E2C3D3;--line:#3B2A45;--dash:#4A3556;
+  --rose:#FF9DBF;--pink:#F4A6C7;--on-pink:#3A1428;--lav:#3A2D57;--mint:#1F4A3C;--name:#FF9DBF;--hl:rgba(255,157,191,.22);
+  --stat1:#4A2437;--icbg:#4A2437;--tagtxt:#D9C8FF;
+  --pill1:#33202D;--pill2:#2E2745;--pill3:#1F3A33;--pill4:#3C2E22;
+  --glow1:rgba(244,166,199,.16);--glow2:rgba(138,110,220,.18);--glow3:rgba(80,200,160,.12);
+  --grid:rgba(255,157,191,.08);--shadow:0 10px 30px rgba(0,0,0,.35);--bar:rgba(36,26,44,.8);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{
+  color:var(--ink);font:400 1rem/1.75 Sora,system-ui,sans-serif;
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(circle at 8% 4%,var(--glow1),transparent 38%),
+    radial-gradient(circle at 95% 18%,var(--glow2),transparent 36%),
+    radial-gradient(circle at 80% 92%,var(--glow3),transparent 34%);
+  background-attachment:fixed;
+}
+::selection{background:var(--pink);color:var(--on-pink)}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:110px 110px;
+  -webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 35%,#000 30%,transparent 100%);
+  mask-image:radial-gradient(ellipse 85% 75% at 50% 35%,#000 30%,transparent 100%)}
+.wrap,footer{position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+svg{flex:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* Toolbar: language + theme */
+.toolbar{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:8px;align-items:center}
+.tb,.lang{background:var(--bar);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1.5px solid var(--line);border-radius:999px;box-shadow:var(--shadow)}
+.tb{width:40px;height:40px;display:grid;place-items:center;color:var(--ink);cursor:pointer;padding:0}
+.tb:hover{border-color:var(--pink)}
+.tb .sun{display:none}
+:root[data-theme="dark"] .tb .sun{display:block}
+:root[data-theme="dark"] .tb .moon{display:none}
+.lang{display:flex;padding:3px;height:40px;align-items:center}
+.lang button{border:0;background:none;font:400 .68rem "JetBrains Mono",monospace;letter-spacing:.08em;color:var(--muted);padding:0 12px;height:32px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--pink);color:var(--on-pink)}
+
+/* Hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;position:relative;padding:80px 0}
+.role{color:var(--rose);font:400 .68rem "JetBrains Mono",monospace;letter-spacing:.2em;text-transform:uppercase}
+h1{font:700 clamp(3rem,8vw,5.5rem)/1.04 Sora,sans-serif;letter-spacing:-.04em;margin:14px 0 22px}
+.word{display:block;white-space:nowrap}
+.word.accent{color:var(--name);width:fit-content;background:linear-gradient(transparent 64%,var(--hl) 64%)}
+.ch{display:inline-block;animation:wave 4.5s ease-in-out infinite;animation-delay:calc(.3s + var(--i)*70ms)}
+@keyframes wave{0%{transform:translateY(0)}8%{transform:translateY(-.14em)}16%{transform:translateY(.03em)}24%,100%{transform:translateY(0)}}
+.tag{color:var(--muted);font-size:1.1rem;max-width:34ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn,.social a,.plinks a{display:inline-flex;align-items:center;gap:8px}
+.btn{padding:12px 24px;border-radius:999px;border:1.5px solid var(--pink);background:var(--card);font:600 .8rem Sora,sans-serif;transition:.2s}
+.btn.main{background:var(--pink);border-color:var(--pink);color:var(--on-pink)}
+.btn:hover{transform:translateY(-2px);background:var(--lav);border-color:var(--lav);box-shadow:var(--shadow)}
+.meta{margin-top:30px;color:var(--muted);font:400 .7rem "JetBrains Mono",monospace;letter-spacing:.04em;display:grid;gap:8px}
+.meta span,.meta a{display:inline-flex;align-items:center;gap:8px}
+.meta a:hover{color:var(--rose)}
+.side{display:grid;justify-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%}
+.stat{border-radius:22px;padding:22px 8px;text-align:center;box-shadow:var(--shadow)}
+.stat:nth-child(1){background:var(--stat1)}.stat:nth-child(2){background:var(--lav)}.stat:nth-child(3){background:var(--mint)}
+.stat b{display:block;font-size:2rem;font-weight:700;line-height:1.2;color:var(--ink)}
+.stat span{font:400 .6rem "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font:400 .6rem "JetBrains Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-align:center}
+.scroll::after{content:"";display:block;width:1px;height:34px;background:linear-gradient(var(--rose),transparent);margin:8px auto 0}
+
+/* Sections */
+section.s{padding:96px 0;border-top:1px dashed var(--dash)}
+.kicker{color:var(--rose);font:400 .65rem "JetBrains Mono",monospace;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px}
+h2{font:700 clamp(1.9rem,4vw,2.6rem)/1.15 Sora,sans-serif;letter-spacing:-.03em;margin-bottom:36px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:48px}
+.about p+p{margin-top:16px}
+.about p{color:var(--body)}
+.about strong{color:var(--ink)}
+.social{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.social a{padding:9px 18px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;font-size:.8rem;font-weight:500;transition:.2s}
+.social a:hover{background:var(--pink);border-color:var(--pink);color:var(--on-pink)}
+.cards{display:grid;gap:14px}
+.info{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 18px;box-shadow:var(--shadow)}
+.info .ic{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:1.4rem;background:var(--icbg)}
+.info:nth-child(2) .ic{background:var(--lav)}.info:nth-child(3) .ic{background:var(--mint)}
+.info b{display:block;font-weight:600}
+.info div span{color:var(--muted);font:400 .68rem "JetBrains Mono",monospace;letter-spacing:.05em}
+
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.group{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
+.group h3{font:400 .62rem "JetBrains Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:14px}
+.pill{display:flex;gap:10px;align-items:center;padding:8px 14px;margin-top:8px;background:var(--pill1);border-radius:999px;font-size:.9rem}
+.group:nth-child(2) .pill{background:var(--pill2)}.group:nth-child(3) .pill{background:var(--pill3)}.group:nth-child(4) .pill{background:var(--pill4)}
+
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;margin-bottom:28px;box-shadow:var(--shadow)}
+.proj:nth-child(even) .shots{order:2}
+.shots{display:grid;gap:10px}
+.shot{aspect-ratio:16/9;border-radius:18px;display:grid;place-items:center;color:var(--muted);font-size:.85rem;background:linear-gradient(135deg,var(--stat1),var(--lav))}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tags span{font:400 .6rem "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:999px;background:var(--lav);color:var(--tagtxt)}
+.proj h3{font:600 1.4rem/1.25 Sora,sans-serif;letter-spacing:-.02em;margin-bottom:10px}
+.proj p{color:var(--body)}
+.plinks{display:flex;gap:12px;margin-top:18px}
+.plinks a{padding:8px 16px;border:1.5px solid var(--pink);border-radius:999px;font:400 .68rem "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+.plinks a:hover{background:var(--pink);color:var(--on-pink)}
+footer{border-top:1px dashed var(--dash);padding:32px 0;text-align:center;color:var(--muted);font:400 .68rem "JetBrains Mono",monospace;letter-spacing:.08em}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .hero,.about,.proj{grid-template-columns:1fr}
+  .hero{padding-top:84px}
+  .skills{grid-template-columns:1fr 1fr}
+  .proj:nth-child(even) .shots{order:0}
+  .scroll{display:none}
+}
+@media (max-width:520px){.skills{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.ch{animation:none}.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn,.social a,.plinks a{transition:none}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="de" aria-pressed="false">DE</button>
+  </div>
+  <button type="button" class="tb" id="theme" aria-label="Switch to dark mode">
+    <svg class="moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</div>
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <p class="role">Engineering &amp; Management Student · Aspiring Data Analyst</p> <!-- EDIT -->
+    <h1 aria-label="Elizabeth Saku"><span class="word"><span class="ch" style="--i:0">E</span><span class="ch" style="--i:1">l</span><span class="ch" style="--i:2">i</span><span class="ch" style="--i:3">z</span><span class="ch" style="--i:4">a</span><span class="ch" style="--i:5">b</span><span class="ch" style="--i:6">e</span><span class="ch" style="--i:7">t</span><span class="ch" style="--i:8">h</span></span><span class="word accent"><span class="ch" style="--i:9">S</span><span class="ch" style="--i:10">a</span><span class="ch" style="--i:11">k</span><span class="ch" style="--i:12">u</span></span></h1> <!-- EDIT: full name (letters are split so they can animate) -->
+    <p class="tag">Turning numbers into clear decisions with Python, SQL and visual storytelling.</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">View Projects ↓</a>
+      <a class="btn" href="https://github.com/elizabethsaku"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.104-.253-.447-1.27.097-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.394.1 2.646.641.698 1.028 1.591 1.028 2.682 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub</a> <!-- EDIT -->
+      <a class="btn" href="https://www.linkedin.com/in/elizabethsaku/"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M7 10.5v6M7 7.5v.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M11.5 16.5v-3.5a2 2 0 0 1 4 0v3.5M11.5 10.5v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>LinkedIn</a> <!-- EDIT -->
+    </div>
+    <div class="meta">
+      <span><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Munich, Germany</span>
+      <a href="mailto:edzifasaku@gmail.com"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10l10 6 10-6"/></svg>edzifasaku@gmail.com</a> <!-- EDIT -->
+      <a href="https://www.thi.de/"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3.333 1.333 6.667 1.333 10 0v-5"/></svg>Technische Hochschule Ingolstadt</a>
+    </div>
+  </div>
+  <div class="side">
+    <div class="stats">
+      <div class="stat"><b>3</b><span>Projects</span></div> <!-- EDIT -->
+      <div class="stat"><b>4</b><span>Tools Used</span></div> <!-- EDIT -->
+      <div class="stat"><b>1</b><span>Mentoring Role</span></div> <!-- EDIT -->
+    </div>
+  </div>
+  <div class="scroll" aria-hidden="true">Scroll</div>
+</header>
+
+<section class="s" id="about">
+  <p class="kicker reveal">01 — About Me</p>
+  <h2 class="reveal">The Analyst Behind the Data</h2>
+  <div class="about reveal">
+    <div>
+      <p data-i18n-html="about1">I'm <strong>Elizabeth Saku</strong>, a student who enjoys finding the story inside a spreadsheet. My degree in Engineering and Management gives me a mix of technical and business thinking.</p>
+      <p data-i18n-html="about2">I care about <strong>clear explanations</strong>, because a good analysis only helps if people understand it. I'm building my portfolio and looking for my first internship or working-student role in data.</p>
+      <div class="social">
+        <a href="mailto:edzifasaku@gmail.com"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10l10 6 10-6"/></svg>Email</a>
+        <a href="https://www.linkedin.com/in/elizabethsaku/"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M7 10.5v6M7 7.5v.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M11.5 16.5v-3.5a2 2 0 0 1 4 0v3.5M11.5 10.5v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>LinkedIn</a>
+        <a href="https://github.com/elizabethsaku"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.104-.253-.447-1.27.097-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.394.1 2.646.641.698 1.028 1.591 1.028 2.682 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub</a>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="info"><span class="ic">🎓</span><div><b>Technische Hochschule Ingolstadt</b><span>Bachelor · Engineering and Management</span></div></div>
+      <div class="info"><span class="ic">📍</span><div><b>Munich, Germany</b><span>Open to opportunities · On-site &amp; Remote</span></div></div>
+      <div class="info"><span class="ic">📊</span><div><b>Data Analytics</b><span>Python · SQL · Tableau · Power BI</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="skills">
+  <p class="kicker reveal">02 — Skills &amp; Tools</p>
+  <h2 class="reveal">My Analytical Toolkit</h2>
+  <div class="skills reveal">
+    <div class="group"><h3>💻 Languages</h3><div class="pill">🐍 Python</div><div class="pill">🗄️ SQL</div></div>
+    <div class="group"><h3>📊 BI &amp; Visualization</h3><div class="pill">📈 Tableau</div><div class="pill">📋 Power BI</div><div class="pill">📗 Excel</div></div>
+    <div class="group"><h3>🔬 Analytics</h3><div class="pill">📐 Statistics</div><div class="pill">🧹 Data Cleaning</div></div>
+    <div class="group"><h3>🛠️ Dev Tools</h3><div class="pill">🐙 Git &amp; GitHub</div><div class="pill">📓 Jupyter</div><div class="pill">⌨️ VS Code</div></div>
+  </div>
+</section>
+
+<section class="s" id="projects">
+  <p class="kicker reveal">03 — Projects</p>
+  <h2 class="reveal">Work &amp; Case Studies</h2>
+
+  <article class="proj reveal">
+    <div class="shots"><div class="shot">EDIT: dashboard screenshot</div></div>
+    <div>
+      <div class="tags"><span>Tableau</span><span>Data Viz</span><span>Business Analytics</span></div>
+      <h3>EDIT: Project One Title</h3>
+      <p>Describe the question you answered, the data you used and one finding with a real number. Two or three sentences is enough.</p>
+      <div class="plinks"><a href="https://github.com/elizabethsaku"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.104-.253-.447-1.27.097-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.394.1 2.646.641.698 1.028 1.591 1.028 2.682 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub</a><a href="#">Live Dashboard</a></div>
+    </div>
+  </article>
+
+  <article class="proj reveal">
+    <div class="shots"><div class="shot">EDIT: screenshot</div></div>
+    <div>
+      <div class="tags"><span>Excel</span><span>SQL</span><span>Data Cleaning</span></div>
+      <h3>EDIT: Project Two Title</h3>
+      <p>Explain the problem, your method and the result. Mention who the work was for, even if it was a course assignment.</p>
+      <div class="plinks"><a href="https://github.com/elizabethsaku"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.104-.253-.447-1.27.097-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.394.1 2.646.641.698 1.028 1.591 1.028 2.682 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub</a><a href="#">Report</a></div>
+    </div>
+  </article>
+
+  <article class="proj reveal">
+    <div class="shots"><div class="shot">EDIT: screenshot</div></div>
+    <div>
+      <div class="tags"><span>Python</span><span>AI</span></div>
+      <h3>EDIT: Project Three Title</h3>
+      <p>A third project shows range. If it is still in progress, say so and describe what you are building next.</p>
+      <div class="plinks"><a href="https://github.com/elizabethsaku"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.104-.253-.447-1.27.097-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.394.1 2.646.641.698 1.028 1.591 1.028 2.682 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub</a></div>
+    </div>
+  </article>
+</section>
+</div>
+
+<footer>© 2026 Elizabeth Saku · made with ♡</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+/* Theme toggle + language switch.
+   To add a language: copy DE and HTML_DE, translate the right-hand text, add it to LANGS and META,
+   and add a button to the .lang group at the top of the page. */
+(function(){
+  var DE={"Engineering & Management Student · Aspiring Data Analyst": "Studentin Wirtschaftsingenieurwesen · angehende Datenanalystin", "Turning numbers into clear decisions with Python, SQL and visual storytelling.": "Ich verwandle Zahlen in klare Entscheidungen – mit Python, SQL und visuellem Storytelling.", "View Projects ↓": "Projekte ansehen ↓", "Munich, Germany": "München, Deutschland", "Projects": "Projekte", "Tools Used": "Genutzte Tools", "Mentoring Role": "Mentoring-Rolle", "Scroll": "Scrollen", "01 — About Me": "01 — Über mich", "The Analyst Behind the Data": "Die Analystin hinter den Daten", "Email": "E-Mail", "Bachelor · Engineering and Management": "Bachelor · Wirtschaftsingenieurwesen", "Open to opportunities · On-site & Remote": "Offen für neue Möglichkeiten · Vor Ort & Remote", "Data Analytics": "Datenanalyse", "My Analytical Toolkit": "Mein analytisches Werkzeug", "💻 Languages": "💻 Sprachen", "📊 BI & Visualization": "📊 BI & Visualisierung", "🔬 Analytics": "🔬 Analytik", "🛠️ Dev Tools": "🛠️ Entwickler-Tools", "📐 Statistics": "📐 Statistik", "🧹 Data Cleaning": "🧹 Datenbereinigung", "03 — Projects": "03 — Projekte", "Work & Case Studies": "Arbeiten & Fallstudien", "EDIT: dashboard screenshot": "BEARBEITEN: Dashboard-Screenshot", "EDIT: screenshot": "BEARBEITEN: Screenshot", "Data Viz": "Datenvisualisierung", "Data Cleaning": "Datenbereinigung", "AI": "KI", "EDIT: Project One Title": "BEARBEITEN: Titel Projekt 1", "EDIT: Project Two Title": "BEARBEITEN: Titel Projekt 2", "EDIT: Project Three Title": "BEARBEITEN: Titel Projekt 3", "Describe the question you answered, the data you used and one finding with a real number. Two or three sentences is enough.": "Beschreibe, welche Frage du beantwortet hast, welche Daten du genutzt hast und ein Ergebnis mit einer konkreten Zahl. Zwei bis drei Sätze reichen.", "Explain the problem, your method and the result. Mention who the work was for, even if it was a course assignment.": "Erkläre das Problem, deine Methode und das Ergebnis. Nenne, für wen die Arbeit war, auch wenn es eine Kursaufgabe war.", "A third project shows range. If it is still in progress, say so and describe what you are building next.": "Ein drittes Projekt zeigt Bandbreite. Ist es noch in Arbeit, sag das und beschreibe, woran du als Nächstes arbeitest.", "Live Dashboard": "Live-Dashboard", "Report": "Bericht", "© 2026 Elizabeth Saku · made with ♡": "© 2026 Elizabeth Saku · mit ♡ gemacht"};
+  var HTML_DE={"about1": "Ich bin <strong>Elizabeth Saku</strong>, Studentin und immer auf der Suche nach der Geschichte hinter einer Tabelle. Mein Studium im Wirtschaftsingenieurwesen verbindet technisches und betriebswirtschaftliches Denken.", "about2": "Mir sind <strong>klare Erklärungen</strong> wichtig, denn eine gute Analyse hilft nur, wenn man sie versteht. Ich baue gerade mein Portfolio auf und suche mein erstes Praktikum oder eine Werkstudentenstelle im Datenbereich."};
+  var META={en:{title:document.title,desc:document.querySelector('meta[name=description]').content},
+            de:{title:'Elizabeth Saku | Angehende Datenanalystin',desc:'Portfolio von Elizabeth Saku, Studentin im Wirtschaftsingenieurwesen mit Karriereziel Daten und KI.'}};
+  var LABELS={en:{dark:'Switch to dark mode',light:'Switch to light mode',lang:'Language'},
+              de:{dark:'Zum dunklen Modus wechseln',light:'Zum hellen Modus wechseln',lang:'Sprache'}};
+  var LANGS={de:DE};
+  var root=document.documentElement, themeBtn=document.getElementById('theme');
+  var themeMeta=document.querySelector('meta[name=theme-color]'), descMeta=document.querySelector('meta[name=description]');
+  var lang='en';
+
+  var nodes=[], w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT), n, k;
+  while((n=w.nextNode())){
+    if(n.parentNode.nodeName==='SCRIPT')continue;
+    k=n.nodeValue.trim();
+    if(k&&DE[k])nodes.push({n:n,en:n.nodeValue,k:k});
+  }
+  var htmls=[].slice.call(document.querySelectorAll('[data-i18n-html]')).map(function(el){
+    return {el:el,en:el.innerHTML,k:el.getAttribute('data-i18n-html')};
+  });
+
+  function labelTheme(){
+    var dark=root.getAttribute('data-theme')==='dark';
+    themeBtn.setAttribute('aria-label',dark?LABELS[lang].light:LABELS[lang].dark);
+    themeMeta.setAttribute('content',dark?'#181019':'#FFF8F6');
+  }
+  function setTheme(t){
+    root.setAttribute('data-theme',t);
+    try{localStorage.setItem('theme',t)}catch(e){}
+    labelTheme();
+  }
+  function setLang(l){
+    lang=l;
+    nodes.forEach(function(o){o.n.nodeValue=l==='en'?o.en:o.en.replace(o.k,LANGS[l][o.k])});
+    htmls.forEach(function(o){o.el.innerHTML=l==='en'?o.en:HTML_DE[o.k]});
+    root.lang=l; document.title=META[l].title; descMeta.setAttribute('content',META[l].desc);
+    [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===l))});
+    document.querySelector('.lang').setAttribute('aria-label',LABELS[l].lang);
+    try{localStorage.setItem('lang',l)}catch(e){}
+    labelTheme();
+  }
+  themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark')});
+  [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  if(saved==='de')setLang('de'); else labelTheme();
+})();
+</script>
+</body>
+</html>
